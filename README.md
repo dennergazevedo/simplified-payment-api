@@ -11,10 +11,10 @@ Esse repositório é uma API Simplificada da Pagamentos do desafio open-source d
   
 
 ## Acesso Rápido
-- [Como usar](#usage)
+- [Pré Requisitos](#pré-requisitos)
+- [Como usar](#como-usar)
 - [API Endpoints](#api-endpoints)
-- [Database](#database)
-- [Contributing](#contributing)
+- [Database](#banco-de-dados)
 
 
 ## Pré Requisitos
@@ -27,9 +27,7 @@ Esse repositório é uma API Simplificada da Pagamentos do desafio open-source d
   
 
 ## API Endpoints
-The API provides the following endpoints:
-
-  
+Esses são os endpoints disponíveis na API
 
 **Buscar usuários**
 ```markdown
@@ -37,15 +35,14 @@ GET /users
 ```
 
 ```json
-// Formato da resposta da requisição
 [
 	{
-		"id":  Number // Gerado automaticamente;
-		"fullName":  String
-		"document":  String
-		"email":  String
-		"password":  String
-		"balance":  String
+		"id":  Number,
+		"fullName":  String,
+		"document":  String,
+		"email":  String,
+		"password":  String,
+		"balance":  String,
 		"userType":  "DEFAULT" || "MERCHANT"
 	}
 ]
@@ -59,13 +56,12 @@ POST /users
 ```
 
 ```json
-// Formato do body da requisição
 {
-	"fullName":  String
-	"document":  String
-	"email":  String
-	"password":  String
-	"balance":  Float
+	"fullName":  String,
+	"document":  String,
+	"email":  String,
+	"password":  String,
+	"balance":  Float,
 	"userType":  "DEFAULT" || "MERCHANT"
 }
 ```
@@ -77,7 +73,6 @@ POST /users
 POST /transactions
 ```
 ```json
-// Formato do envio do corpo
 {
 	"senderId":  Number
 	"receiverId":  Number
