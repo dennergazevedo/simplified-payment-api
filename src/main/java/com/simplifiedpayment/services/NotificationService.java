@@ -8,6 +8,6 @@ import com.simplifiedpayment.domain.user.User;
 public class NotificationService {
 
     public void sendNotification(User user, String message) throws Exception{
-        System.out.println("Notificacao enviada para o o usuario");
+        System.out.println(message);
     }
 }

@@ -16,8 +16,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @DataJpaTest
 @ActiveProfiles("test")
 class UserRepositoryTest {
@@ -32,7 +30,7 @@ class UserRepositoryTest {
     @DisplayName("Should get User successfully from DB")
     void findUserByDocumentCase1() {
         String document = "99999999901";
-        UserDTO data = new UserDTO("Fernanda", "Teste", document, new BigDecimal(10), "test@gmail.com", "44444", UserType.COMMON);
+        UserDTO data = new UserDTO("Denner Azevedo", document, new BigDecimal(10), "contato@dnnr.dev", "mypass#@!", UserType.DEFAULT);
         this.createUser(data);
 
         Optional<User> result = this.userRepository.findUserByDocument(document);
@@ -43,7 +41,7 @@ class UserRepositoryTest {
     @Test
     @DisplayName("Should not get User from DB when user not exists")
     void findUserByDocumentCase2() {
-        String document = "99999999901";
+        String document = "99999999999";
 
         Optional<User> result = this.userRepository.findUserByDocument(document);
 

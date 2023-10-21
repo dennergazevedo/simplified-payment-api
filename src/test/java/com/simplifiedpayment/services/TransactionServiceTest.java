@@ -16,7 +16,6 @@ import com.simplifiedpayment.repositories.TransactionRepository;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -46,8 +45,8 @@ class TransactionServiceTest {
     @Test
     @DisplayName("Should create transaction successfully when everything is OK")
     void createTransactionCase1() throws Exception {
-        User sender = new User(1L, "Maria", "Souza", "99999999901", "maria@gmail.com", "12345", new BigDecimal(10), UserType.COMMON);
-        User receiver = new User(2L, "Joao", "Souza", "99999999902", "joao@gmail.com", "12345", new BigDecimal(10), UserType.COMMON);
+        User sender = new User(1L, "Denner Azevedo", "99999999999", "dnnr@gmail.com", "123456", new BigDecimal(10), UserType.DEFAULT);
+        User receiver = new User(2L, "Taynara Ferreira", "99999999998", "tay@gmail.com", "654321", new BigDecimal(10), UserType.DEFAULT);
 
         when(userService.findUserById(1L)).thenReturn(sender);
         when(userService.findUserById(2L)).thenReturn(receiver);
@@ -72,8 +71,8 @@ class TransactionServiceTest {
     @Test
     @DisplayName("Should throw Exception when Transaction is not allowed")
     void createTransactionCase2() throws Exception {
-        User sender = new User(1L, "Maria", "Souza", "99999999901", "maria@gmail.com", "12345", new BigDecimal(10), UserType.COMMON);
-        User receiver = new User(2L, "Joao", "Souza", "99999999902", "joao@gmail.com", "12345", new BigDecimal(10), UserType.COMMON);
+        User sender = new User(1L, "Denner Azevedo", "99999999999", "dnnr@gmail.com", "123456", new BigDecimal(10), UserType.DEFAULT);
+        User receiver = new User(2L, "Taynara Ferreira", "99999999998", "tay@gmail.com", "123456", new BigDecimal(10), UserType.DEFAULT);
 
         when(userService.findUserById(1L)).thenReturn(sender);
         when(userService.findUserById(2L)).thenReturn(receiver);
